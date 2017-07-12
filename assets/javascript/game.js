@@ -12,6 +12,7 @@ $('#totalScore').html(score);
 function gameStart() {
 // ----------------------target number-------------
 randomNum = Math.floor(Math.random() * 102) + 19;
+ document.getElementById('targetNumber').innerHTML = randomNum;
 // ----------------------emeralds have random number
 	blueEmerald = emeralds[Math.floor(Math.random() * emeralds.length)];
 	greenEmerald = emeralds[Math.floor(Math.random() * emeralds.length)];
@@ -35,27 +36,82 @@ document.getElementById('totalScore').innerHTML = score;
 $('#bluebtn').on('click', function () {
 	score = score + blueEmerald;
 	$('#totalScore').html(score);
+  if (score === randomNum) {
+  wins++;
+  alert('You won!')
+  score = 0;
+  gameStart();
+} else if (score > randomNum) {
+  losses++;
+  alert('You lose!')
+  gameStart();
+  $("#winCount").html(wins);
+  $("#lossCount").html(losses);
+}
+
 });
 $('#greenbtn').on('click', function () {
 	score = score + greenEmerald;
 	$('#totalScore').html(score);
+  if (score === randomNum) {
+  wins++;
+  alert('You won!')
+  score = 0;
+  gameStart();
+} else if (score > randomNum) {
+  losses++;
+  alert('You lose!')
+  score = 0;
+  gameStart();
+  $("#winCount").html(wins);
+  $("#lossCount").html(losses);
+}
+  
 });
 $('#yellowbtn').on('click', function () {
 	score = score + yellowEmerald;
 	$('#totalScore').html(score);
+  if (score === randomNum) {
+  wins++;
+  alert('You won!')
+  score = 0;
+  gameStart();
+} else if (score > randomNum) {
+  losses++;
+  alert('You lose!')
+  score = 0;
+  gameStart();
+  $("#winCount").html(wins);
+   $("#lossCount").html(losses);
+}
+
 });
+
 $('#purpbtn').on('click', function () {
 	score = score + purpEmerald;
 	$('#totalScore').html(score);
+  if (score === randomNum) {
+  wins++;
+  alert('You won!')
+   score = 0;
+  gameStart();
+} else if (score > randomNum) {
+  losses++;
+  alert('You lose!')
+  score = 0;
+  gameStart();
+  $("#winCount").html(wins);
+   $("#lossCount").html(losses);
+}
 });
 
 //------------------ Win/loss counter----------------
 if (score === randomNum) {
   wins++;
   gameStart();
-} 
-
-if (score > randomNum) {
+} else if (score > randomNum) {
   losses++;
   gameStart();
+  $("#winCount").html(wins);
+   $("#lossCount").html(losses);
 }
