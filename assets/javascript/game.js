@@ -41,6 +41,8 @@ $('#bluebtn').on('click', function () {
   alert('You won!')
   score = 0;
   gameStart();
+  $("#winCount").html(wins);  
+  $("#lossCount").html(losses);
 } else if (score > randomNum) {
   losses++;
   alert('You lose!')
@@ -58,6 +60,8 @@ $('#greenbtn').on('click', function () {
   alert('You won!')
   score = 0;
   gameStart();
+  $("#winCount").html(wins);  
+  $("#lossCount").html(losses);
 } else if (score > randomNum) {
   losses++;
   alert('You lose!')
@@ -76,6 +80,8 @@ $('#yellowbtn').on('click', function () {
   alert('You won!')
   score = 0;
   gameStart();
+  $("#winCount").html(wins);  
+  $("#lossCount").html(losses);
 } else if (score > randomNum) {
   losses++;
   alert('You lose!')
@@ -95,6 +101,8 @@ $('#purpbtn').on('click', function () {
   alert('You won!')
    score = 0;
   gameStart();
+  $("#winCount").html(wins);  
+  $("#lossCount").html(losses);
 } else if (score > randomNum) {
   losses++;
   alert('You lose!')
